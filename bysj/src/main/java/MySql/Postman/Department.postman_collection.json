@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "c2ec7b28-7821-4e00-a5dd-610bfa9bc5fe",
+		"name": "Department",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/department.ctl?id=4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "80871a6f-0d91-428a-8abf-07cadc41ed87",
+						"exec": [
+							"tests[\"Body matches string 0204\"] = responseBody.has(\"0204\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"id为null新系\",\"no\":\"0201\",\"remarks\":\"\",\"school\":{ \"description\": \"山财\",\"id\": 3, \"no\": \"06\", \"remarks\": \"\" }}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/department.ctl?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "785ba6e7-1961-44ee-acf6-45e244413e98",
+						"exec": [
+							"tests[\"Body matches string 0201\"] = responseBody.has(\"0201\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"id为null新系\",\"no\":\"0201\",\"remarks\":\"\",\"school\":{ \"description\": \"山财\",\"id\": 3, \"no\": \"06\", \"remarks\": \"\" }}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/department.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e65c0d80-c055-4b4b-a04f-5a45b082634b",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"post response\"] = jsonData.message===\"增加成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"id为null新系\",\"no\":\"0201\",\"remarks\":\"\",\"school\":{\"description\": \"山建\",\"id\": 1, \"no\": \"05\",\"remarks\": \"\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/department.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4b85fda-8760-4348-9f9f-f21346632120",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"put response\"] = jsonData.message===\"修改成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"null\",\"id\":4,\"no\":\"0204\",\"remarks\":\"\",\"school\":{\"description\":\"山建\",\"id\":1,\"no\":\"05\",\"remarks\":\"\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/department.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/department.ctl?id=5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ed42af5-0363-4c18-84a0-f4de263a2f8f",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"delete response\"] = jsonData.message===\"删除成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"id为null新系\",\"no\":\"0201\",\"remarks\":\"\",\"school\":{ \"description\": \"山财\",\"id\": 3, \"no\": \"06\", \"remarks\": \"\" }}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/department.ctl?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/department.ctl?paraType=school&id=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "785ba6e7-1961-44ee-acf6-45e244413e98",
+						"exec": [
+							"tests[\"Body matches string 0201\"] = responseBody.has(\"0201\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"id为null新系\",\"no\":\"0201\",\"remarks\":\"\",\"school\":{ \"description\": \"山财\",\"id\": 3, \"no\": \"06\", \"remarks\": \"\" }}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/department.ctl?paraType=school&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "paraType",
+							"value": "school"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

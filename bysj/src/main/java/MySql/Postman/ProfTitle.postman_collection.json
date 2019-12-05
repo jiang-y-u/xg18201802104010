@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "7b840ce5-6373-49e1-a072-84fd10f56e86",
+		"name": "ProfTitle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b6049d4-d741-4fa3-8048-379cfd8daf31",
+						"exec": [
+							"tests[\"Body matches string 校长助理\"] = responseBody.has(\"校长助理\");",
+							"tests[\"Body matches string 教导处主任\"] = responseBody.has(\"教导处主任\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"教导处主任\",\"no\":\"\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/profTitle.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"profTitle.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl?id=2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2977936-5dc4-4a16-93ee-c9c111c79116",
+						"exec": [
+							"tests[\"Body matches string 校长助理\"] = responseBody.has(\"校长助理\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"校长\",\"no\":\"\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/profTitle.ctl?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"profTitle.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a0f8fdb-8d3d-48ce-abb1-4fa36abfc7f3",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"post response\"] = jsonData.message===\"增加成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"教导处主任\",\"no\":\"\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/profTitle.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"profTitle.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd9a2154-c469-42aa-9260-677e4d397a15",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"put response\"] = jsonData.message===\"修改成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"校长助理\",\"id\":2,\"no\":\"\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/profTitle.ctl?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"profTitle.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl?id=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "99859fee-0780-490f-9acd-0b11d5848643",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"del response\"] = jsonData.message===\"删除成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"校长助理\",\"id\":2,\"no\":\"\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/profTitle.ctl?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"profTitle.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

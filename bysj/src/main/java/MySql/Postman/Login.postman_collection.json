@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "54ca9b25-6051-4188-add6-591ccf55f77f",
+		"name": "Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/login.ctl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"0207\",\"password\":\"0207\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/login.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"login.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

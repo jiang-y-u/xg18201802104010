@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "59a8d90f-a99e-4678-b0ed-ff6205d8b2e7",
+		"name": "School ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/school.ctl?id=2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"山建\",\"no\":\"05\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/school.ctl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"博士\",\"no\":\"05\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/school.ctl",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"山建\",\"id\":3,\"no\":\"05\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/school.ctl",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"山建\",\"id\":3,\"no\":\"05\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/school.ctl",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"山建\",\"no\":\"05\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/school.ctl?id=2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"description\":\"山建\",\"no\":\"05\",\"remarks\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/school.ctl?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"school.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8ba170ed-ea38-4c63-b2a3-14a924d108eb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8df3a72d-f06f-4a5e-beb8-fdda9531fd2a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

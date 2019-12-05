@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "2b6de8fc-5b43-45d2-8e17-2766e6e0a2d4",
+		"name": "Teacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a16b17e-aa20-441c-b3f9-25201b05bdc9",
+						"exec": [
+							"tests[\"Body matches string 硕士\"] = responseBody.has(\"硕士\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"jy\",\n\"profTitle\":{\"description\":\"校长助理\",\"id\":2,\"no\":\"\",\"remarks\":\"\"},\n\"degree\":{\"description\":\"硕士\",\"id\":4,\"no\":\"05\",\"remarks\":\"\"},\n\"department\":{\"description\":\"null\",\"id\":4,\"no\":\"0201\",\"remarks\":\"\",\"school\":{\"description\":\"山建\",\"id\":1,\"no\":\"05\",\"remarks\":\"\"}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/teacher.ctl?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4bc06af7-5f98-40dd-a361-e6fe493db4e9",
+						"exec": [
+							"tests[\"Body matches string 硕士\"] = responseBody.has(\"硕士\");",
+							"tests[\"Body matches string 山大\"] = responseBody.has(\"山大\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"jy\",\n\"profTitle\":{\"description\":\"校长助理\",\"id\":2,\"no\":\"\",\"remarks\":\"\"},\n\"degree\":{\"description\":\"硕士\",\"id\":4,\"no\":\"05\",\"remarks\":\"\"},\n\"department\":{\"description\":\"null\",\"id\":4,\"no\":\"0201\",\"remarks\":\"\",\"school\":{\"description\":\"山建\",\"id\":1,\"no\":\"05\",\"remarks\":\"\"}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/teacher.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e27e4062-2d2d-4c27-9d9a-812487a44764",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"add response \"] = jsonData.message ===\"增加成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"degree\": {\r\n            \"description\": \"硕士\",\r\n            \"id\": 4,\r\n            \"no\": \"05\",\r\n            \"remarks\": \"11\"\r\n        },\r\n        \"department\": {\r\n            \"description\": \"null\",\r\n            \"id\": 4,\r\n            \"no\": \"0204\",\r\n            \"remarks\": \"11\",\r\n            \"school\": {\r\n                \"description\": \"环境学院\",\r\n                \"id\": 1,\r\n                \"no\": \"05\",\r\n                \"remarks\": \"\"\r\n            }\r\n        },\r\n        \"name\": \"李六\",\r\n        \"no\": \"0208\",\r\n        \"title\": {\r\n            \"description\": \"校长助理\",\r\n            \"id\": 2,\r\n            \"no\": \"\",\r\n            \"remarks\": \"11\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/teacher.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc617a20-85c9-4ef6-928d-a3db136a662d",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"update response \"] = jsonData.message ===\"修改成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"degree\": {\r\n            \"description\": \"硕士\",\r\n            \"id\": 4,\r\n            \"no\": \"05\",\r\n            \"remarks\": \"\"\r\n        },\r\n        \"department\": {\r\n            \"description\": \"null\",\r\n            \"id\": 4,\r\n            \"no\": \"0201\",\r\n            \"remarks\": \"\",\r\n            \"school\": {\r\n                \"description\": \"山建\",\r\n                \"id\": 1,\r\n                \"no\": \"05\",\r\n                \"remarks\": \"\"\r\n            }\r\n        },\r\n        \"id\": 2,\r\n        \"name\": \"j\",\r\n        \"title\": {\r\n            \"description\": \"校长助理\",\r\n            \"id\": 2,\r\n            \"no\": \"\",\r\n            \"remarks\": \"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/teacher.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da4aae9b-8efb-4d42-95e7-1a5312bf8eb3",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"tests[\"delete  response \"] = jsonData.message ===\"删除成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"degree\": {\r\n            \"description\": \"硕士\",\r\n            \"id\": 4,\r\n            \"no\": \"05\",\r\n            \"remarks\": \"\"\r\n        },\r\n        \"department\": {\r\n            \"description\": \"null\",\r\n            \"id\": 4,\r\n            \"no\": \"0201\",\r\n            \"remarks\": \"\",\r\n            \"school\": {\r\n                \"description\": \"山建\",\r\n                \"id\": 1,\r\n                \"no\": \"05\",\r\n                \"remarks\": \"\"\r\n            }\r\n        },\r\n        \"id\": 2,\r\n        \"name\": \"j\",\r\n        \"title\": {\r\n            \"description\": \"校长助理\",\r\n            \"id\": 2,\r\n            \"no\": \"\",\r\n            \"remarks\": \"\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/teacher.ctl?id=26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "26"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

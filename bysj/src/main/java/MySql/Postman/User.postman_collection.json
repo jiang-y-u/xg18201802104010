@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "1a1577dd-b324-48a9-bdc3-c0567d810652",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/user.ctl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/user.ctl?username=0206&password=0206",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"user.ctl"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "0206"
+						},
+						{
+							"key": "password",
+							"value": "0206"
+						}
+					]
+				},
+				"description": "http://localhost:8080:user.ctl"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user.ctl",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":5,\n\"password\":\"0207\",\n\"teacher\":{\"degree\":{\"description\":\"硕士\",\"id\":4,\"no\":\"05\",\"remarks\":\"11\"},\n\"department\":{\"description\":\"null\",\"id\":4,\"no\":\"0204\",\"remarks\":\"11\",\n\"school\":{\"description\":\"环境学院\",\"id\":1,\"no\":\"05\",\"remarks\":\"\"}},\n\"id\":19,\"name\":\"0203\",\"no\":\"李三\",\n\"title\":{\"description\":\"校长助理\",\"id\":2,\"no\":\"\",\"remarks\":\"11\"}},\n\"username\":\"0203\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/user.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"user.ctl"
+					]
+				},
+				"description": "http://localhost:8080/user.ctl"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user.ctl?id=5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/user.ctl?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"user.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user.ctl?username=0207",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_/user.ctl?username=0207",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gradle___xg_edu_cn_sdjuz___bysj_1_0_SNAPSHOT_war__exploded_",
+						"user.ctl"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "0207"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
