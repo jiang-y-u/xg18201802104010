@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -27,6 +28,11 @@ public class ListDepartmentController extends HttpServlet {
         //创建JSON对象message，以便往前端响应信息
         JSONObject message = new JSONObject();
         try {
+            HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if(session==null||session.getAttribute("currentUser")==null){
+                return;
+            }else{
             //如果id = null, 表示响应所有院系对象，否则响应id指定的院系对象
             if (id_str != null) {
                 int id = Integer.parseInt(id_str);
@@ -37,10 +43,11 @@ public class ListDepartmentController extends HttpServlet {
                     //如果paraType的值等于school
                     responseDepartmentBySchool(response, paraType, id);
                 }
-            }else{
+            }
+            else{
                 responseDepartments(response);
             }
-        } catch (SQLException e) {
+        } }catch (SQLException e) {
             message.put("message", "数据库操作异常");
             e.printStackTrace();
             //响应message到前端
@@ -94,10 +101,14 @@ public class ListDepartmentController extends HttpServlet {
         //创建JSON对象
         JSONObject message = new JSONObject();
         //到数据库表中删除对应的学院
-        try {
+        try { HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if(session==null||session.getAttribute("currentUser")==null){
+                return;
+            }else{
             DepartmentService.getInstance().delete(id);
             message.put("message", "删除成功");
-        }catch (SQLException e){
+        }}catch (SQLException e){
             message.put("message", "数据库操作异常");
         }catch(Exception e){
             message.put("message", "网络异常");
@@ -121,8 +132,14 @@ public class ListDepartmentController extends HttpServlet {
         JSONObject message = new JSONObject();
         //在数据库表中增加Department对象
         try {
-            DepartmentService.getInstance().add(departmentToAdd);
-            message.put("message", "增加成功");
+            HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if (session == null || session.getAttribute("currentUser") == null) {
+                return;
+            } else {
+                DepartmentService.getInstance().add(departmentToAdd);
+                message.put("message", "增加成功");
+            }
         }catch (SQLException e){
             message.put("message", "数据库操作异常");
         }catch(Exception e){
@@ -144,8 +161,14 @@ public class ListDepartmentController extends HttpServlet {
         JSONObject message = new JSONObject();
         //到数据库表修改Department对象对应的记录
         try {
-            DepartmentService.getInstance().update(departmentToAdd);
-            message.put("message", "修改成功");
+            HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if (session == null || session.getAttribute("currentUser") == null) {
+                return;
+            } else {
+                DepartmentService.getInstance().update(departmentToAdd);
+                message.put("message", "修改成功");
+            }
         }catch (SQLException e){
             message.put("message", "数据库操作异常");
         }catch(Exception e){

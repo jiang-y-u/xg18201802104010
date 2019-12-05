@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -28,7 +29,11 @@ public class ListProfTitleController extends HttpServlet {
 
         //创建JSON对象message，以便往前端响应信息
         JSONObject message = new JSONObject();
-        try {
+        try { HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if(session==null||session.getAttribute("currentUser")==null){
+                return;
+            }else{
             //如果id = null, 表示响应所有学院对象，否则响应id指定的学院对象
             if (id_str == null) {
                 responseProfTitles(response);
@@ -36,6 +41,7 @@ public class ListProfTitleController extends HttpServlet {
                 int id = Integer.parseInt(id_str);
                 responseProfTitle(id, response);
             }
+        }
         } catch(Exception e){
             message.put("message", "网络异常");
         }
@@ -79,8 +85,14 @@ public class ListProfTitleController extends HttpServlet {
         JSONObject message = new JSONObject();
         //到数据库表中删除对应的学院
         try {
-            ProfTitleService.getInstance().delete(id);
-            message.put("message", "删除成功");
+            HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if (session == null || session.getAttribute("currentUser") == null) {
+                return;
+            } else {
+                ProfTitleService.getInstance().delete(id);
+                message.put("message", "删除成功");
+            }
         }catch (SQLException e){
             message.put("message", "数据库操作异常");
         }catch(Exception e){
@@ -105,8 +117,14 @@ public class ListProfTitleController extends HttpServlet {
         JSONObject message = new JSONObject();
         //在数据库表中增加ProfTitle对象
         try {
-            ProfTitleService.getInstance().add(profTitleToAdd);
-            message.put("message", "增加成功");
+            HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if (session == null || session.getAttribute("currentUser") == null) {
+                return;
+            } else {
+                ProfTitleService.getInstance().add(profTitleToAdd);
+                message.put("message", "增加成功");
+            }
         }catch (SQLException e){
             message.put("message", "数据库操作异常");
         }catch(Exception e){
@@ -128,8 +146,14 @@ public class ListProfTitleController extends HttpServlet {
         JSONObject message = new JSONObject();
         //到数据库表修改ProfTitle对象对应的记录
         try {
-            ProfTitleService.getInstance().update(profTitleToAdd);
-            message.put("message", "修改成功");
+            HttpSession session = request.getSession(false);
+            System.out.println(session);
+            if (session == null || session.getAttribute("currentUser") == null) {
+                return;
+            } else {
+                ProfTitleService.getInstance().update(profTitleToAdd);
+                message.put("message", "修改成功");
+            }
         }catch (SQLException e){
             message.put("message", "数据库操作异常");
         }catch(Exception e){
