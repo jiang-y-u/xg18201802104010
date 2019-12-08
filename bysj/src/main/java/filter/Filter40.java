@@ -1,4 +1,4 @@
-/*package filter;
+package filter;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -43,4 +43,4 @@ public class Filter40 implements Filter {
     }
     @Override
     public void destroy() {}
-}*/
+}
